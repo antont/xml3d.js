@@ -33,7 +33,6 @@ XML3D.data.DataAdapter = function(factory, node) {
     XML3D.base.NodeAdapter.call(this, factory, node);
 
     // Node handles for src and proto
-    this.handles = {};
     this.xflowDataNode = null;
 };
 XML3D.createClass(XML3D.data.DataAdapter, XML3D.base.NodeAdapter);
@@ -51,7 +50,6 @@ XML3D.data.DataAdapter.prototype.init = function() {
     this.xflowDataNode.setFilter(this.node.getAttribute("filter"));
     this.xflowDataNode.setCompute(this.node.getAttribute("compute"));
     recursiveDataAdapterConstruction(this);
-
 };
 
 function recursiveDataAdapterConstruction(adapter){
@@ -177,5 +175,6 @@ XML3D.data.DataAdapter.prototype.connectedAdapterChanged = function(key, adapter
 XML3D.data.DataAdapter.prototype.toString = function() {
     return "XML3D.data.DataAdapter";
 };
+
 
 }());
